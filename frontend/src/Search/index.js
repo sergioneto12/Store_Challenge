@@ -35,6 +35,7 @@ export default function Search() {
         //         </CardWrapper>
         //     })}
         // </Card>
+        <div></div>
     )
 }
 

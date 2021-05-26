@@ -1,18 +1,54 @@
-import React from 'react';
-import { Forms } from '../Styles/styles';
+// import axios from 'axios';
+// import React, { useState } from 'react';
+// import { Forms } from '../Styles/styles';
+// import { Card, CardWrapper } from '../Styles/styles';
 
-export default function SearchBar() {
+// export default function SearchBar() {
 
-    const buscaEvento = (e) => {
-        const valor = e.target.value
-        console.log(valor)
-    }
+//     const [isActive, setIsActive] = useState(false);
+//     if (lista !== null) {
+//         setIsActive(true);
+//     };
 
-    return (
-        <Forms method='GET'>
-            <input placeholder='&#x1F50E;&#xFE0E; Search' name='objeto'></input>
-            <button type='submit' onClick={(e) => buscaEvento(e)}>Pesquisar</button>
-        </Forms>
-    )
-}
+//     const [listas, setListas] = useState([]);
+
+//     const { data } = async () => {
+
+//         await axios.get(`http://localhost:5000/Products`, {
+//             params: {
+//                 tipo: filter
+//             }
+//         }), [setListas]
+//     }
+
+//     const [filter, setFilter] = useState('');
+
+//     function Selection() {
+//         if (isActive == true) {
+//             return (
+//                 <Card>
+//                     {listas.map(lista => {
+//                         <CardWrapper key={lista.id}>
+//                             <h1>{lista.nome}</h1>
+//                             <img src={lista.url} alt='img' />
+//                             <h2>R$ {lista.valor}</h2>
+//                             <div>
+//                                 <button className='b1'><i class="far fa-edit"></i></button>
+//                                 <button className='b2'><i class="far fa-trash-alt"></i></button>
+//                             </div>
+//                         </CardWrapper>
+//                     })}
+//                 </Card>
+//             )
+    
+//         }
+//     }
+
+//     return (
+//         <Forms method='GET'>
+//             <input placeholder='&#x1F50E;&#xFE0E; Search' onChange={(e) => setFilter(e.target.value)}></input>
+//             <button type='submit' onClick={Selection()}>Pesquisar</button>
+//         </Forms>  
+//     )
+// }
 

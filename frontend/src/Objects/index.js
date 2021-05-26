@@ -1,8 +1,6 @@
 import React from 'react';
-import { Card, CardWrapper } from '../Styles/styles';
+import { Card, CardWrapper, Forms } from '../Styles/styles';
 import axios from 'axios';
-import Search from '../Search';
-import SearchBar from '../SearchBar.js';
 
 export default class Objects extends React.Component {
     constructor() {
@@ -48,10 +46,26 @@ export default class Objects extends React.Component {
             })
     };
 
+    // handleText = (e) => {
+    //     const valor = e.target.value;
+    // }
+
+    listFilter = (e, objects) => {
+        const valor = e.target.value
+        if (objects.tipo !== valor) {
+            objects.splice(objects.indexOf(!valor), 1);
+            this.setState(objects);
+            console.log(objects)
+        }
+    }
+
     render() {
         return (
             <div>
-                <SearchBar />
+                <Forms method='GET'>
+                    <input placeholder='&#x1F50E;&#xFE0E; Search' onChange={(e) => this.handleText}></input>
+                    <button type='submit' onClick={this.listFilter}></button>
+                </Forms>
                 <Card>
                     {this.state.objects.map(object =>
                         <CardWrapper key={object.id}>
