@@ -1,5 +1,7 @@
 # The store that looks like what you need!
 
+Please, remember that all local variables are not at GitHub, so if you are one of the testers and need it, reply to me! Thanks!
+
 ## This project was done using ReactJS and NodeJS, both on front and back-end.
 
 Made based on Firebase Database and Storage, you need two things to get this running through your client: 
