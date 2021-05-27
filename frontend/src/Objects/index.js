@@ -6,8 +6,6 @@ export default function Objects() {
     const [objects, setObjects] = useState([]);
     const [term, setTerm] = useState('');
 
-    console.log(objects)
-
     useEffect(() => {
         axios.get(`http://localhost:5000/Products`)
             .then(res => {
@@ -19,9 +17,8 @@ export default function Objects() {
             });
     })
 
-    const handleDelete = event => {
-        event.preventDefault();
-        axios.delete(`http://localhost:5000/Products/:id`)
+    async function handleDelete() {
+        await axios.delete(`http://localhost:5000/Products/:id`)
             .then(function (res) {
                 console.log(res);
             })
@@ -30,9 +27,8 @@ export default function Objects() {
             });
     };
 
-    const handlePatch = event => {
-        event.preventDefault();
-        axios.patch(`http://localhost:5000/Products/:id`)
+    async function handlePatch() {
+        await axios.patch(`http://localhost:5000/Products/:id`)
             .then(res => {
                 console.log(res);
                 this.setState({ objects: res.data });
@@ -53,7 +49,7 @@ export default function Objects() {
                 {objects.filter(object => {
                     if (term == "") {
                         return object
-                    } else if (object.nome.toLowerCase().includes(term.toLocaleLowerCase()) || object.nome.toLowerCase().includes(term.toLocaleLowerCase())) {
+                    } else if (object.tipo.toLowerCase().includes(term.toLocaleLowerCase())) {
                         return object
                     }
                 }).map((object) =>
