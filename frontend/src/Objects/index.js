@@ -7,6 +7,7 @@ export default function Objects() {
     const [term, setTerm] = useState('');
 
     useEffect(() => {
+        //axios.get(`https://storechallenge12.herokuapp.com/Products`)
         axios.get(`http://localhost:5000/Products`)
             .then(res => {
                 setObjects(res.data)
@@ -18,6 +19,7 @@ export default function Objects() {
     })
 
     async function handleDelete() {
+        //axios.delete(`https://storechallenge12.herokuapp.com/Products/:id`)
         await axios.delete(`http://localhost:5000/Products/:id`)
             .then(function (res) {
                 console.log(res);
@@ -28,6 +30,7 @@ export default function Objects() {
     };
 
     async function handlePatch() {
+        //axios.patch(`https://storechallenge12.herokuapp.com/Products/:id`)
         await axios.patch(`http://localhost:5000/Products/:id`)
             .then(res => {
                 console.log(res);
