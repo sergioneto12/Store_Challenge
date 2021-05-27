@@ -53,7 +53,7 @@ export default function Objects() {
                 {objects.filter(object => {
                     if (term == "") {
                         return object
-                    } else if (object.nome.toLowerCase().includes(term.toLocaleLowerCase())) {
+                    } else if (object.nome.toLowerCase().includes(term.toLocaleLowerCase()) || object.nome.toLowerCase().includes(term.toLocaleLowerCase())) {
                         return object
                     }
                 }).map((object) =>

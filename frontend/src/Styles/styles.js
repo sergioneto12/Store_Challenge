@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     height: 70px;
     width: 100%;
     text-align: center;
-    box-shadow: 0px 2px 15px black;
+    /* box-shadow: 0px 2px 15px black; */
 `;
 
 export const MenuTitle = styled.h1`
@@ -34,7 +34,7 @@ export const Forms = styled.form`
         border-radius: 10px;
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        box-shadow: 0px 2px 3px black;
+        /* box-shadow: 0px 2px 3px black; */
 
         :hover {
             cursor: pointer;
@@ -108,7 +108,7 @@ export const CardWrapper = styled.div`
     border-radius: 25px;
     width: 250px;
     height: 350px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color:#e1e1e1;
 
     @media (max-width: 700px) {
@@ -144,8 +144,8 @@ export const CardWrapper = styled.div`
             width: 130px;
             background-color: #1616ff;
             color: #ffffff;
-            border: 1px solid black;
-            box-shadow: 1px 1px 3px black;  
+            /* border: 1px solid black;
+            box-shadow: 1px 1px 3px black;   */
 
             :hover {
                 cursor: pointer;
