@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import Img from '../Images/img2.jpg';
+import Img2 from '../Images/img1.png';
 
 //Menu
 export const Wrapper = styled.div`
     margin: 0;
     padding: 0;
-    background-color:#e1e1e1;
+    background-color:#0b0e94;
     height: 70px;
     width: 100%;
     text-align: center;
@@ -12,10 +14,28 @@ export const Wrapper = styled.div`
 `;
 
 export const MenuTitle = styled.h1`
-    color: black;
+    color: white;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     margin: 0;
+    padding: 15px 0; 
+`;
+
+//Imagem de capa
+export const Imagem = styled.img`
+    background-image: url(${Img});
+    background-position-y: 50%;
+    width: 100%;
+    height: 500px;
+`;
+
+//Título de pesquisa
+export const SearchTitle = styled.h1`
+    text-align: center;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 20px 0 0 0;
     padding: 15px 0; 
 `;
 
@@ -24,7 +44,7 @@ export const Forms = styled.form`
     display: flex;
     justify-content: center;
     width: 90%;
-    margin: 3% 0 3% 6%;
+    margin: 1% 0 3% 6%;
 
     input {
         height: 40px;
@@ -43,7 +63,6 @@ export const Forms = styled.form`
 
     input:placeholder-shown {
         padding-left: 2%;
-
     }
 
     input:focus {
@@ -109,7 +128,7 @@ export const CardWrapper = styled.div`
     width: 250px;
     height: 350px;
     /* border: 1px solid black; */
-    background-color:#e1e1e1;
+    background-color:#0b0e94;
 
     @media (max-width: 700px) {
         margin: 10%;
@@ -118,19 +137,19 @@ export const CardWrapper = styled.div`
 
     h1 {
         font-weight: 500;
-        color: black;
+        color: white;
     }
 
     img {
         height: 140px;
         width: 140px;
         border-radius: 100%;
-        border: 1px solid black;
+        border: 2px solid white;
     }
 
     h2 {
         font-weight: 500;
-        color: black;
+        color: white;
     }
 
     div {

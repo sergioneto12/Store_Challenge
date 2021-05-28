@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardWrapper, Forms } from '../Styles/styles';
+import { Card, CardWrapper, Forms, Imagem, SearchTitle } from '../Styles/styles';
+import { Img } from '../Images/img1.png';
 import axios from 'axios';
 
 export default function Objects() {
@@ -93,6 +94,8 @@ export default function Objects() {
 
     return (
         <div>
+            <Imagem/>
+            <SearchTitle>Pesquise por nome ou tipo para encontrar seu calçado ideial!</SearchTitle>
             <Forms method='GET'>
                 <input
                     type='text'
@@ -109,7 +112,9 @@ export default function Objects() {
                         return object
                     } else if (object.tipo.toLowerCase().includes(term.toLocaleLowerCase())) {
                         return object
-                    }
+                    } else if (object.nome.toLowerCase().includes(term.toLocaleLowerCase())) {
+                        return object
+                    } 
                 }).map((object) =>
                     <CardWrapper key={object.id}>
                         <h1>{object.nome}</h1>
