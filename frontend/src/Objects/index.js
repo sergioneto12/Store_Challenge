@@ -7,22 +7,22 @@ export default function Objects() {
     const [term, setTerm] = useState('');
 
     useEffect(() => {
-        //axios.get(`https://storechallenge12.herokuapp.com/Products`)
-        axios.get(`http://localhost:5000/Products`)
+        axios.get(`https://storechallenge12.herokuapp.com/Products`)
+        //axios.get(`http://localhost:5000/Products`)
             .then(res => {
                 setObjects(res.data)
-                console.log(res.data)
             })
             .catch(error => {
                 console.log(error);
             });
-    })
+    }, []);
 
-    async function handleDelete() {
-        //axios.delete(`https://storechallenge12.herokuapp.com/Products/:id`)
-        await axios.delete(`http://localhost:5000/Products/:id`)
+    async function handleDelete(object) {
+        console.log(object)
+        axios.delete(`https://storechallenge12.herokuapp.com/Products/` + object)
+        //await axios.delete(`http://localhost:5000/Products/:id`)
             .then(function (res) {
-                console.log(res);
+                console.log("Removido com sucesso!");
             })
             .catch(function (error) {
                 console.log(error);
@@ -62,7 +62,7 @@ export default function Objects() {
                         <h2>R$ {object.valor}</h2>
                         <div>
                             <button className='b1' onClick={handlePatch}><i className="far fa-edit"></i></button>
-                            <button className='b2' onClick={handleDelete}><i className="far fa-trash-alt"></i></button>
+                            <button className='b2' onClick={() => handleDelete(object.id)}><i className="far fa-trash-alt"></i></button>
                         </div>
                     </CardWrapper>
                 )}
