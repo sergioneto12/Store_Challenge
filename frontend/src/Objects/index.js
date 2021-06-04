@@ -31,7 +31,7 @@ export default function Objects() {
     };
 
     async function handlePatch(object) {
-        let resposta = window.prompt('O que você deseja modificar (nome, valor, tipo ou url da foto?');
+        let resposta = window.prompt('O que você deseja modificar (nome, valor, tipo ou url da foto)?');
         console.log(resposta);
 
         if (resposta === 'nome') {
