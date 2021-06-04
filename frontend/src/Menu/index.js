@@ -5,7 +5,7 @@ export default function Menu() {
     return (
         <div>
             <Wrapper>
-                <MenuTitle>The Best Place To Buy Stuff</MenuTitle>
+                <MenuTitle>Bem vindo ao Salão de Calçados Virtual!</MenuTitle>
             </Wrapper>
             
         </div>
