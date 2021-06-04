@@ -106,15 +106,8 @@ export default function Objects() {
                 {/* <button type='submit'>Pesquisar</button> */}
             </Forms>
             <Card>
-                {objects.filter(object => {
-                    if (term === "") {
-                        return object
-                    } else if (object.tipo.toLowerCase().includes(term.toLocaleLowerCase())) {
-                        return object
-                    } else if (object.nome.toLowerCase().includes(term.toLocaleLowerCase())) {
-                        return object
-                    } 
-                }).map((object) =>
+                {objects.filter(object => term === "" || object.tipo.toLowerCase().includes(term.toLocaleLowerCase()) || object.nome.toLowerCase().includes(term.toLocaleLowerCase())
+                ).map((object) =>
                     <CardWrapper key={object.id}>
                         <h1>{object.nome}</h1>
                         <img src={object.url} alt='img' />
