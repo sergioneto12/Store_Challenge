@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Img from '../Images/img2.jpg';
-import Img2 from '../Images/img1.png';
 
 //Menu
 export const Wrapper = styled.div`

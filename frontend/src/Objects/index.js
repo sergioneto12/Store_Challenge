@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardWrapper, Forms, Imagem, SearchTitle } from '../Styles/styles';
-import { Img } from '../Images/img1.png';
 import axios from 'axios';
 
 export default function Objects() {
@@ -35,7 +34,7 @@ export default function Objects() {
         let resposta = window.prompt('O que você deseja modificar (nome, valor, tipo ou url da foto?');
         console.log(resposta);
 
-        if (resposta == 'nome') {
+        if (resposta === 'nome') {
             await axios.patch(`https://storechallenge12.herokuapp.com/Products/` + object, {
                 nome: window.prompt('Qual é o novo nome, então? '),
             })
@@ -49,7 +48,7 @@ export default function Objects() {
                 })
         } 
 
-        if (resposta == 'tipo') {
+        if (resposta === 'tipo') {
             await axios.patch(`https://storechallenge12.herokuapp.com/Products/` + object, {
                 tipo: window.prompt('Qual é o novo tipo, então? '),
             })
@@ -63,7 +62,7 @@ export default function Objects() {
                 })
         } 
 
-        if (resposta == 'valor') {
+        if (resposta === 'valor') {
             await axios.patch(`https://storechallenge12.herokuapp.com/Products/` + object, {
                 valor: window.prompt('Qual é o novo valor, então? '),
             })
@@ -77,7 +76,7 @@ export default function Objects() {
                 })
         } 
 
-        if (resposta == 'url') {
+        if (resposta === 'imagem') {
             await axios.patch(`https://storechallenge12.herokuapp.com/Products/` + object, {
                 url: window.prompt('Qual é a nova url, então? '),
             })
@@ -108,7 +107,7 @@ export default function Objects() {
             </Forms>
             <Card>
                 {objects.filter(object => {
-                    if (term == "") {
+                    if (term === "") {
                         return object
                     } else if (object.tipo.toLowerCase().includes(term.toLocaleLowerCase())) {
                         return object
